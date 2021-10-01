@@ -1,9 +1,21 @@
+/* eslint-disable prettier/prettier */
 export default (date) => {
-  const convertLocale = new Date(date).toLocaleDateString('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  const dateOnly = date.split(' ')[0].split('-');
 
-  return convertLocale;
+  const month = {
+    '01': 'Januari',
+    '02': 'Februari',
+    '03': 'Maret',
+    '04': 'April',
+    '05': 'Mei',
+    '06': 'Juni',
+    '07': 'Juli',
+    '08': 'Agustus',
+    '09': 'September',
+    '10': 'Oktober',
+    '11': 'November',
+    '12': 'Desember',
+  };
+
+  return `${dateOnly[2]} ${month[dateOnly[1]]} ${dateOnly[0]}`;
 };
